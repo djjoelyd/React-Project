@@ -1,0 +1,122 @@
+@mixin customGrid($item, $parent, $isLast : false, $grid-margin: 2%){
+  
+	$w: 100% - ($grid-margin * ($parent - 1));
+	$m: ($w / $parent * $item) + ($grid-margin * ($item - 1));
+  float: left;
+	width: $m;
+	margin-right: $grid-margin;		
+  margin-bottom: $grid-margin; 
+	
+  	@if $isLast == true {
+        margin-right: 0;
+     }
+  
+}
+
+@mixin customGridPush($item, $parent, $grid-margin: 2%){
+  
+	$w: 100% - ($grid-margin * ($parent - 1));
+	$m: ($w / $parent * $item) + ($grid-margin * ($item - 1));
+  float: left;
+	margin-left: $m+$grid-margin;
+  
+}
+
+@mixin pxToRem($size) {
+  font-size: $size;
+  font-size: ($size / $base-font-size) * 1rem;
+  line-height: ceil($size / $base-line-height ) * ($base-line-height / $size);
+}
+
+
+
+@mixin fonts($fonts){
+	// Loop through sass font list, split em up and set them as font face
+	@each $font in $fonts{ 
+		@font-face{
+			font-family:nth($font,1);
+			font-style:normal;
+			font-weight:nth($font,3);
+			$path:nth($font,2);
+				src:url('../fonts/#{$path}.eot');
+				src:url('../fonts/#{$path}.eot?#iefix') format('embedded-opentype');
+				src:url('../fonts/#{$path}.woff') format('woff');
+				src:url('../fonts/#{$path}.ttf') format('truetype');
+		}
+	}
+}
+
+@include fonts( (MetaPro,MetaCompPro-Book,300) (MetaPro,MetaCompPro-Medium,500) (Didot06A,theanodidot-regular-webfont,normal) );
+
+//Clear floats mixin
+@mixin clearfix() {
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+//Box sizing mixin
+@mixin box-sizing($box-model) {
+  -webkit-box-sizing: $box-model; // Safari <= 5
+     -moz-box-sizing: $box-model; // Firefox <= 19
+          box-sizing: $box-model;
+}
+
+//Border Radius Mixin
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  border-radius: $radius;
+  background-clip: padding-box;  /* stops bg color from leaking outside the border: */
+}
+
+//Center block mixin
+@mixin center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+//css3 transition mixin
+@mixin transition($transition-property, $transition-time, $method) {
+    -webkit-transition: $transition-property $transition-time $method;
+    -moz-transition: $transition-property $transition-time $method;
+    -ms-transition: $transition-property $transition-time $method;
+    -o-transition: $transition-property $transition-time $method;
+    transition: $transition-property $transition-time $method;
+}
+
+
+@mixin text-shadow($x: 2px, $y: 2px, $blur: 5px, $color: rgba(0,0,0,.4)) {
+    text-shadow: $x $y $blur $color;
+}
+
+@mixin placeholder() {
+    &::-webkit-input-placeholder {
+     color: lighten($black, 80%);
+     font-family: 'Montserrat', sans-serif;
+     font-weight: 100;
+  }
+
+  &:-moz-placeholder { /* Firefox 18- */
+     color: lighten($black, 80%);
+     font-family: 'Montserrat', sans-serif;
+     font-weight: 100;
+  }
+
+  &::-moz-placeholder {  /* Firefox 19+ */
+     color: lighten($black, 80%);  
+     font-family: 'Montserrat', sans-serif;
+     font-weight: 100;
+  }
+
+  &:-ms-input-placeholder {  
+     color: lighten($black, 80%); 
+     font-family: 'Montserrat', sans-serif;
+     font-weight: 100; 
+  }
+}
+

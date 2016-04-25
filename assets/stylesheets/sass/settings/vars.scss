@@ -1,0 +1,47 @@
+$base-font-size : 10px;
+$base-line-ratio: 1.4;
+$base-line-height: 20px;
+
+// Grid variables
+$max-width: 1024px;
+
+
+//Primary
+$black: #000000;
+$white: #ffffff;
+
+
+//Different Greys
+$dark-grey: #0c0d0d;
+$medium-grey: #191b1f;
+$light-grey: #f4f6f6;
+$text-grey: #797979;
+
+$grey-green: #95a0a0;
+
+//Different Greens
+$green: #02a388;
+$light-green: #dae8e7;
+
+$orange: #ffae00;
+
+// Navigation variables
+$nav-padding: 25px;
+$nav-height: 50px;
+$nav-font-size: 24px;;
+
+$huge-padding: 60px;
+$large-padding: 30px;
+$small-padding: 15px;
+$tiny-padding: 5px;
+
+// Sizes - repsonsive
+$desktop-min: 1024px;
+$tablet-max: ($desktop-min - 1px);
+$tablet-min: 768px;
+$mobile-max: ($tablet-min - 1px);
+$mobile-min: 320px;
+
+
+
+

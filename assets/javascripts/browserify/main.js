@@ -7,3 +7,4 @@ import $ from 'jQuery'
 
 //React Components
 import General from './components/general.js'
+import Accordion from './components/accordion.js'

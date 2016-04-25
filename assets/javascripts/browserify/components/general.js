@@ -23,7 +23,7 @@ var Todo = React.createClass({
 	render: function(){
 		return(
 			<div>
-				<h1>My app</h1>
+				<h1>My List</h1>
 				<Item data={this.state.list} deletey = {this.removeItem} />
 				<input type="text" id="listInput" />
 				<button id="listInputButton" onClick={this.addItem}>GO</button>

@@ -1,0 +1,120 @@
+#selected {
+  float: left;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.border-box {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+div.dropdown-container {
+  float: left;
+  display: block;
+  width: 250px;
+  margin-top: 20px;
+  &.show > div.dropdown-list {
+    opacity:1;
+  }
+  > div {
+    &.dropdown-display {
+      float: left;
+      width: 100%;
+      background: white;
+      height: 40px;
+      cursor: pointer;
+      border: solid 1px #dddddd;
+      box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      > {
+        * {
+          float: left;
+          height: 100%;
+          height: 40px;
+          line-height: 40px !important;
+          display: inline-block;
+          vertical-align: middle;
+        }
+        span {
+          font-size: 14px;
+          width: 100%;
+          position: relative;
+          box-sizing: border-box;
+          -moz-box-sizing: border-box;
+          padding-right: 34px;
+          padding-left: 10px;
+        }
+        i {
+          position: relative;
+          width: 14px;
+          margin-left: -24px;
+          font-size: 1.125em;
+          font-weight: bold;
+          padding-right: 10px;
+          text-align: right;
+        }
+      }
+    }
+    &.dropdown-list {
+      float: left;
+      position: relative;
+      width: 100%;
+      opacity: 0;
+      transition: opacity .25s ease-in-out;
+      -moz-transition: opacity .25s ease-in-out;
+      -webkit-transition: opacity .25s ease-in-out;
+      > div {
+        position: absolute;
+        width: 100%;
+        z-index: 2;
+        cursor: pointer;
+        background: white;
+        > div {
+          float: left;
+          width: 100%;
+          padding: 0 10px;
+          font-size: 14px;
+          box-sizing: border-box;
+          -moz-box-sizing: border-box;
+          border: solid 1px #dddddd;
+          border-top: none;
+          background:#fff;
+          &:hover {
+            background: #F0F0F0;
+          }
+          &.selected {
+            background: #2875c7;
+            color: white;
+            > i {
+              display: inline-block;
+            }
+          }
+          > {
+            * {
+              height: 40px;
+              line-height: 40px !important;
+              display: inline-block;
+              vertical-align: middle;
+            }
+            span {
+              float: left;
+              width: 100%;
+              position: relative;
+              padding-right: 30px;
+              box-sizing: border-box;
+              -moz-box-sizing: border-box;
+              color: inherit;
+            }
+            i {
+              float: left;
+              width: 20px;
+              margin-left: -20px;
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}

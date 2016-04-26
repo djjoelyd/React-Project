@@ -1,0 +1,144 @@
+.backface-visibility-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.tile {
+  color: white;
+  padding: 15px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+div.button-container {
+  float: left;
+  width: 100%;
+  margin-top: 15px;
+  button {
+    width: auto;
+    padding: 7px 22px;
+  }
+}
+
+.flipper-container {
+  float: left;
+  width: 250px;
+  height: 250px;
+  margin-right: 15px;
+  display: block;
+  perspective: 1000px;
+  -webkit-perspective: 1000px;
+  -moz-perspective: 1000px;
+  -ms-perspective: 1000px;
+  span {
+    color: white;
+  }
+  > div.flipper {
+    float: left;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    .front, .back {
+      float: left;
+      display: block;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform-style: preserve-3d;
+      -webkit-transform-style: preserve-3d;
+      -moz-transform-style: preserve-3d;
+      -ms-transform-style: preserve-3d;
+      -webkit-transition: -webkit-transform ease 500ms;
+      -moz-transition: -webkit-transform ease 500ms;
+      -ms-transition: -webkit-transform ease 500ms;
+      -o-transition: -webkit-transform ease 500ms;
+      transition: -webkit-transform ease 500ms;
+      -webkit-transition: transform ease 500ms;
+      -moz-transition: transform ease 500ms;
+      -ms-transition: transform ease 500ms;
+      -o-transition: transform ease 500ms;
+      transition: transform ease 500ms;
+    }
+    .front {
+      z-index: 2;
+      background: #19489E;
+      /* front tile styles go here! */
+    }
+    .back {
+      background: #9E1919;
+      /* back tile styles go here! */
+    }
+  }
+  &.horizontal {
+    .front {
+      transform: rotateY(0deg);
+      -ms-transform: rotateY(0deg);
+      -webkit-transform: rotateY(0deg);
+      -o-transform: rotateY(0deg);
+      -moz-transform: rotateY(0deg);
+    }
+    .back {
+      transform: rotateY(-180deg);
+      -ms-transform: rotateY(-180deg);
+      -webkit-transform: rotateY(-180deg);
+      -o-transform: rotateY(-180deg);
+      -moz-transform: rotateY(-180deg);
+    }
+    div.flipper.flipped {
+      .front {
+        transform: rotateY(180deg);
+        -ms-transform: rotateY(180deg);
+        -webkit-transform: rotateY(180deg);
+        -o-transform: rotateY(180deg);
+        -moz-transform: rotateY(180deg);
+      }
+      .back {
+        transform: rotateY(0deg);
+        -ms-transform: rotateY(0deg);
+        -webkit-transform: rotateY(0deg);
+        -o-transform: rotateY(0deg);
+        -moz-transform: rotateY(0deg);
+      }
+    }
+  }
+  &.vertical {
+    .front {
+      transform: rotateX(0deg);
+      -ms-transform: rotateX(0deg);
+      -webkit-transform: rotateX(0deg);
+      -o-transform: rotateX(0deg);
+      -moz-transform: rotateX(0deg);
+    }
+    .back {
+      transform: rotateX(-180deg);
+      -ms-transform: rotateX(-180deg);
+      -webkit-transform: rotateX(-180deg);
+      -o-transform: rotateX(-180deg);
+      -moz-transform: rotateX(-180deg);
+    }
+    div.flipper.flipped {
+      .front {
+        transform: rotateX(180deg);
+        -ms-transform: rotateX(180deg);
+        -webkit-transform: rotateX(180deg);
+        -o-transform: rotateX(180deg);
+        -moz-transform: rotateX(180deg);
+      }
+      .back {
+        transform: rotateX(0deg);
+        -ms-transform: rotateX(0deg);
+        -webkit-transform: rotateX(0deg);
+        -o-transform: rotateX(0deg);
+        -moz-transform: rotateX(0deg);
+      }
+    }
+  }
+}

@@ -1,4 +1,3 @@
-$lightred: #f12e50;
 $red: #ee0c4b;
 $darkred: #c80e3d;
 
@@ -10,9 +9,7 @@ $darkred: #c80e3d;
 }
 
 .main {
-  background: $lightred;
-  width: 40%;
-  max-width: 30em;
+  width: 100%;
   min-width: 15em;
   overflow: hidden;
   margin-top: 50px;

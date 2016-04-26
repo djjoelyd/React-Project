@@ -25,6 +25,7 @@
     "gulp-browserify": "^0.5.1",
     "gulp-concat": "^2.6.0",
     "gulp-concat-css": "^2.2.0",
+    "gulp-copy": "0.0.2",
     "gulp-faster-browserify": "^0.2.1",
     "gulp-if": "^2.0.0",
     "gulp-minify-css": "^1.2.3",

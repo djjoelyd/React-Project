@@ -11,6 +11,7 @@ var sass = require('gulp-sass');
 var concatCss = require('gulp-concat-css');
 var minifyCss = require('gulp-minify-css');
 var autoprefixer = require('gulp-autoprefixer');
+var copy = require('gulp-copy');
 
 var b = watchify(
     browserify({
@@ -53,7 +54,12 @@ gulp.task('sass', function() {
     .pipe(gulp.dest('assets/dist/stylesheets'))
 });
 
-gulp.task('watch', ['sass', 'bundle'], function() {
+gulp.task('copy', function() {
+   gulp.src('assets/fonts/**/*.{ttf,woff,woff2,otf,eot,svg}')
+   .pipe(gulp.dest('assets/dist/fonts'));
+});
+
+gulp.task('watch', ['sass', 'copy', 'bundle'], function() {
     gulp.watch('assets/stylesheets/sass/*.scss', ['sass']);
     gulp.watch('assets/stylesheets/sass/**/*.scss', ['sass']);
     gulp.watch(['assets/javascripts/*.js', 'assets/javascripts/browserify/**/*.js', 'assets/libs/*.js'], ['bundle']);
